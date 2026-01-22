@@ -9,5 +9,7 @@ export default function CardList() {
     - handle loading, busy, and error states
     - style as a grid UI */
 
-  return <main></main>;
+  return <main>
+    <h1>CardList page</h1>
+  </main>;
 }

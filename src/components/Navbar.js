@@ -9,9 +9,10 @@ export default function Navbar() {
     <header>
       <strong>Card App</strong>
       <nav>
-        <NavLink to="/" end>
-          Home
-        </NavLink>
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/cards" end>CardList</NavLink>
+        <NavLink to="/cards/new" end>Add</NavLink>
+        <NavLink to="/edit/:id" end>Edit</NavLink>
       </nav>
     </header>
   );
