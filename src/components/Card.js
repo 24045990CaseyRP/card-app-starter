@@ -1,12 +1,34 @@
 import { Link } from "react-router-dom";
 
 export default function Card({ card, onDelete, busy }) {
-  /* TODO: Complete the Card component
-    - display the card image and name
-    - display the card ID
-    - edit button linking to edit page
-    - delete button calling onDelete with the card object
-    - style as a card UI */
 
-  return <div></div>;
+
+  return (
+    <div className="card">
+      <div className="card-image-container">
+        <img
+          src={card.card_pic || "https://placehold.co/600x400?text=No+Image"}
+          alt={card.card_name}
+          className="card-image"
+        />
+      </div>
+      <div className="card-content">
+        <h3 className="card-title">{card.card_name}</h3>
+        <p className="card-id">ID: {card.id}</p>
+
+        <div className="card-actions">
+          <Link to={`/edit/${card.id}`} className="btn btn-secondary">
+            Edit
+          </Link>
+          <button
+            onClick={() => onDelete(card.id)}
+            disabled={busy}
+            className="btn btn-danger"
+          >
+            {busy ? "Deleting..." : "Delete"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
